@@ -2,7 +2,7 @@
 
 ## Objectives
 
-1. Add an event listener to a DOM node
+1. Add an event listener to a DOM node d
 2. Trigger event listeners on DOM nodes
 3. Explain the difference between bubbling and capturing events
 
