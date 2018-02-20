@@ -12,6 +12,21 @@
   </head>
 
   <body>
+    <script>
+      const input = document.querySelector('input')
+
+      // Log the keyboard code of any keboard button entered into the input
+      input.addEventListener('keydown', function(e) {
+      console.log(e.which)
+      })
+
+      // Don't allow the letter 'g' to be entered into the input
+      input.addEventListener('keydown', function(e) {
+        if (e.which === 71) {
+          return e.preventDefault()
+        }
+      })
+    </script>
     <main id="main">My ID is "main"!</main>
 
     <br />
