@@ -22,7 +22,7 @@
 
     <br />
 
-    <div>
+    <div id="one">
       1
       <div>
         2
@@ -37,5 +37,19 @@
         </div>
       </div>
     </div>
+    <script>
+      //you'd add JS here too add event listeners
+      const one = document.getElementById('one');
+      
+      one.addEventListener('click', function(e){
+        alert('One is the loneliest number')
+      });
+      
+      const input = document.querySelector('input');
+ 
+      input.addEventListener('keydown', function(e) {
+        console.log(e.key);
+      });
+    </script>
   </body>
 </html>
