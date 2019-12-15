@@ -38,4 +38,51 @@
       </div>
     </div>
   </body>
+
+  <script>
+
+//Section 1. Demonstrate listening to Events on a DOM Node with addEventListener()
+  const main = document.getElementById('main');
+
+  main.addEventListener('click', function(event) {
+    alert('I was clicked!');
+  });
+
+//Section 2. Demonstrate triggering events listeners on DOM nodes
+//Section 3. Demonstrate preventing the default behavior for DOM nodes
+  const input = document.querySelector('input');
+
+  input.addEventListener('keydown', function(e) {
+    if (e.which ===71) {
+      return e.preventDefault()
+    } else{
+    console.log(e.which);
+    }
+  });
+
+//Section 4. Explain the difference between bubbling and capturing events
+//Section 5. Demonstrate stopping propagated behaviors with stopPropagation()
+
+  let divs = document.querySelectorAll('div');
+
+  function bubble(e) {
+    e.stopPropagation();
+    console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+  }
+
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', bubble);
+  }
+
+  function capture(e) {
+    e.stopPropagation();
+    console.log(this.firstChild.nodeValue.trim() + ' captured');
+  }
+
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', capture, true)
+  }
+
+
+  </script>
 </html>
