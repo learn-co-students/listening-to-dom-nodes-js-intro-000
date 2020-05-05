@@ -10,7 +10,6 @@
      }
     </style>
   </head>
-
   <body>
     <main id="main">My ID is "main"!</main>
 
@@ -39,3 +38,60 @@
     </div>
   </body>
 </html>
+
+<script>
+const main = document.getElementById('main');
+main.addEventListener('click', function(event) {
+alert('I was clicked!');
+});
+//This listens for specific thing (clicking on main)
+
+const input = document.querySelector('input');
+input.addEventListener('keydown', function(e) {
+  console.log(e.key);
+});
+//When entering value, it will return value on console
+
+
+const input = document.querySelector('input')
+input.addEventListener('keydown', function(e) {
+  if (e.key === "g") {
+    return e.preventDefault()
+  } else {
+    console.log(e.key)
+  }
+});
+//prevents a value from being entered
+
+let divs = document.querySelectorAll('div');
+function bubble(e) {
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+}
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble);
+}
+//bubbling... something like it explodes and count down? it goes through things?
+//Value + bubble and with for loop through
+
+divs = document.querySelectorAll('div');
+function capture(e) {
+  console.log(this.firstChild.nodeValue.trim() + ' captured');
+}
+for (let i = 0; i < divs.length; i++) {
+  // set the third argument to `true`!
+  divs[i].addEventListener('click', capture, true);
+}
+//console log first child node + capture
+//then for loops through the divs from where we clicked
+
+const divs = document.querySelectorAll('div');
+function bubble(e) {
+  // stop! that! propagation!
+  e.stopPropagation();
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+}
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble);
+}
+
+</script>
