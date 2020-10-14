@@ -10,6 +10,8 @@
      }
     </style>
   </head>
+  
+  
 
   <body>
     <main id="main">My ID is "main"!</main>
@@ -37,5 +39,25 @@
         </div>
       </div>
     </div>
+    
+    <script type="text/javascript">
+      const divs = document.querySelectorAll('div');
+ 
+      function replaceText(e) {
+      console.log(this.firstChild.nodeValue);
+        this.firstChild.nodeValue = "hello this is new text";
+        e.stopPropagation();
+        }
+
+ 
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', replaceText);
+        }
+    </script>
   </body>
+  
 </html>
+
+
+
+
