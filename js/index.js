@@ -26,11 +26,11 @@ input.addEventListener('keydown', function(e) {
 let divs = document.querySelectorAll('div');
 
 function bubble(e) {
-  console.log(this.firstchild.nodeValue.trim() + 'bubbled');
+  console.log(this.firstChild.nodeValue.trim() + 'bubbled');
 }
 
 
-for (let i = 0; i < div.length; i++) {
+for (let i = 0; i < divs.length; i++) {
   divs[i].addEventListener('click', bubble);
 }
 
@@ -41,7 +41,7 @@ function capture(e) {
   console.log(this.firstChild.nodeValue.trim() + 'captured');
 }
 
-for (let i = 0; i < div.length; i++) {
+for (let i = 0; i < divs.length; i++) {
   divs[i].addEventListener('click', capture, true);
 }
 
@@ -54,7 +54,7 @@ function bubble(e) {
   console.log(this.firstChild.nodeValue.trim() + 'bubbled');
 }
 
-for (let i = 0; i < div.length; i++) {
+for (let i = 0; i < divs.length; i++) {
   divs[i].addEventListener('click', bubble);
 }
 

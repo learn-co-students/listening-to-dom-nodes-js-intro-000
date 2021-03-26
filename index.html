@@ -12,15 +12,9 @@
   </head>
 
   <body>
-  <script>
-    const main = document.getElementById('main');
-
-    main.addEventListener('click', function(event) {
-      alert('I was clicked!');
-    });
-  </script>
+  
     <main id="main">My ID is "main"!</main>
-
+     
     <br />
 
     <div>
@@ -44,5 +38,42 @@
         </div>
       </div>
     </div>
+   <script>
+   
+     let divs = document.querySelectorAll('div');
+
+     function bubble(e) {
+      console.log(this.firstChild.nodeValue.trim() + 'bubbled');
+      }
+
+
+     for (let i = 0; i < divs.length; i++) {
+       divs[i].addEventListener('click', bubble);
+     }
+
+
+     divs = document.querySelectorAll('div');
+
+     function capture(e) {
+       console.log(this.firstChild.nodeValue.trim() + 'captured');
+     }
+
+     for (let i = 0; i < divs.length; i++) {
+       divs[i].addEventListener('click', capture, true);
+     }
+     
+     divs = document.querySelectorAll('div');
+
+     function bubble(e) {
+       e.stopPropagation();
+  
+       console.log(this.firstChild.nodeValue.trim() + 'bubbled');
+     }
+
+     for (let i = 0; i < divs.length; i++) {
+       divs[i].addEventListener('click', bubble);
+     }
+  </script>
+
   </body>
 </html>
