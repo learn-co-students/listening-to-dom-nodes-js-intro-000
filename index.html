@@ -37,5 +37,29 @@
         </div>
       </div>
     </div>
+    <script>
+    const divs = document.querySelectorAll('div');
+    function bubble(e){
+      e.stopPropagation();
+      console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+    }
+
+    for(let i = 0; i < divs.length; i++){
+      divs[i].addEventListener('click', bubble);
+}
+
+const input = document.querySelector('input');
+
+// prevent G key press
+input.addEventListener('keydown', function(e) {
+  if (e.which === 71) {
+    return e.preventDefault();
+  }
+});
+
+input.addEventListener('keydown', function(e) {
+  console.log(e.which);
+});
+    </script>
   </body>
 </html>
